@@ -1,17 +1,14 @@
 document.getElementById("myform").addEventListener("submit",function(event)){
+	event.preventDefault();
 		const name = document.getElementById("name").value.trim();
         const age = document.getElementById("age").value.trim();
 
 	if(!name || !age){
-		alert("Please enter valid details.");
-		event.preventDefault();
+		return("Please enter valid details.");
+		
 	}
-	}
-
-
-
-
-	const mypromise = new promise((resolve,reject) => {
+	
+const mypromise = new promise((resolve,reject) => {
 		if(age>=18){
 		setTimeout(() => {
 			resolve(`Welcome,${name}. You can vote.`);
@@ -30,4 +27,6 @@ mypromise
     .catch((data2) => {
 		console.log(`data2`);
 	});
+
+};
 
