@@ -1,10 +1,15 @@
-const name = document.getElementById("name").value.trim();
-const age = document.getElementById("age").value.trim();
+document.getElementById("myform").addEventListener("submit",function(event)){
+		const name = document.getElementById("name").value.trim();
+        const age = document.getElementById("age").value.trim();
 
-if(!name || !age){
-	alert("Please enter valid details.");
-	document.getElementById("myform").addEventListener("submit",event.preventDefault());
-}else{
+	if(!name || !age){
+		alert("Please enter valid details.");
+		event.preventDefault();
+	}
+	}
+
+
+
 function submitform(){
 	return new promise((resolve,reject) => {
 		if(age>=18){
@@ -18,4 +23,3 @@ function submitform(){
 		};
 	});
 }
-};
