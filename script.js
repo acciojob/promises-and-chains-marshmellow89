@@ -1,32 +1,24 @@
-document.getElementById("myform").addEventListener("submit",function(event)){
-	event.preventDefault();
-		const name = document.getElementById("name").value.trim();
-        const age = document.getElementById("age").value.trim();
+let age = document.getElementById("age");
+let name = document.getElementById("name");
+let btn = document.getElementById("btn");
 
-	if(!name || !age){
-		return("Please enter valid details.");
-		
-	}
-	
-const mypromise = new promise((resolve,reject) => {
-		if(age>=18){
-		setTimeout(() => {
-			resolve(`Welcome,${name}. You can vote.`);
-		},4000);
-		}else{
-			setTimeout(() => {
-				reject(`Oh sorry ${name}. You aren't old enough.`);
-			});
-		};
+if(age=="" || name==""){
+	btn.addEventListener("click", (event) => {
+		event.preventDefault();
 	});
-
-mypromise
-     .then((data1) => {
-		 console.log(`data1`);
-	 })
-    .catch((data2) => {
-		console.log(`data2`);
-	});
-
+	console.alert("Please enter valid details.")
 };
 
+return new Promise("resolve","reject") =>{
+	setTimeout(()=> {
+		if(age>=18){
+			resolve("Welcome, . You can vote.");
+		}else{
+			reject("Oh sorry . You aren't old enough.");
+		}
+	},4000)
+}.then(msg => {
+	console.alert(msg);
+}).catch(mssg =>{
+	console.alert(mssg);
+});
