@@ -1,20 +1,25 @@
-let age = document.getElementById("age").value;
-let name = document.getElementById("name").value;
-let btn = document.getElementById("btn").value;
+let myform = document.getElementById("myform");
+myform.addEventListener("submit", (event) => {
+    event.preventDefault();
+    let age = document.getElementById("age").value;
+    let name = document.getElementById("name").value;
 
-if(age=="" || name==""){
-	btn.addEventListener("click",(event) => {
-		event.preventDefault();
-		alert("Please enter valid details.");
-	});
-}
+  if(!age || !name){
+    alert("Please enter valid details.");
+	return;
+	}
 
-return new Promise((resolve,reject) =>{
+ new Promise((resolve,reject) =>{
 	setTimeout(() => {
 		if(age>=18){
-			alert(`Welcome, ${name}. You can vote.`);
+			resolve(`Welcome, ${name}. You can vote.`);
 		}else{
-			alert(`Oh sorry ${name}. You aren't old enough.`);
+			reject(`Oh sorry ${name}. You aren't old enough.`);
 		}
-	})
-})
+	},4000);
+}).then(msg => {
+    alert(msg);
+}).catch(mssg => {
+    alert(mssg);
+});
+});
