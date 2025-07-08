@@ -12,9 +12,9 @@ if(age=="" || name==""){
 return new Promise((resolve,reject) =>{
 	setTimeout(() => {
 		if(age>=18){
-			alert("Welcome, . You can vote.");
+			alert(`Welcome, ${name}. You can vote.`);
 		}else{
-			alert("Oh sorry . You aren't old enough.");
+			alert(`Oh sorry ${name}. You aren't old enough.`);
 		}
 	})
 })
