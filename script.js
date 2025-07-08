@@ -1,24 +1,20 @@
-let age = document.getElementById("age");
-let name = document.getElementById("name");
-let btn = document.getElementById("btn");
+let age = document.getElementById("age").value;
+let name = document.getElementById("name").value;
+let btn = document.getElementById("btn").value;
 
 if(age=="" || name==""){
-	btn.addEventListener("click", (event) => {
+	btn.addEventListener("click",(event) => {
 		event.preventDefault();
+		alert("Please enter valid details.");
 	});
-	console.alert("Please enter valid details.")
-};
+}
 
-return new Promise("resolve","reject") =>{
-	setTimeout(()=> {
+return new Promise((resolve,reject) =>{
+	setTimeout(() => {
 		if(age>=18){
-			resolve("Welcome, . You can vote.");
+			alert("Welcome, . You can vote.");
 		}else{
-			reject("Oh sorry . You aren't old enough.");
+			alert("Oh sorry . You aren't old enough.");
 		}
-	},4000)
-}.then(msg => {
-	console.alert(msg);
-}).catch(mssg =>{
-	console.alert(mssg);
-});
+	})
+})
